@@ -14,12 +14,26 @@
 <div>&nbsp;</div>
 <%= link_to "Review this Location", new_location_review_path(@location) %>
 
+
 <div>&nbsp;</div>
 <h4> REVIEWS: </h4>
-<% @reviews.each do |r| %>
-<div> <%= r.description %></div>
-<div> Spookiness: <%= r.spo_rating %></div>
-<div> Scenery: <%= r.sce_rating %></div>
-<div> Exploration: <%= r.exp_rating %></div>
-<div>&nbsp;</div>
-<% end %>
+<ul>
+  <% @reviews.each do |r| %>
+    <li>
+      <div> <%= r.description %></div>
+      <div> Spookiness: <%= r.spo_rating %></div>
+      <div> Scenery: <%= r.sce_rating %></div>
+      <div> Exploration: <%= r.exp_rating %></div>
+      <div>&nbsp;</div>
+      <% if @user && (@user == review.user || @user.role == "admin") %>
+        <%= link_to "Edit this review", edit_station_review_path(@station, review) %>
+        <%= button_to "Delete",
+        review_path(review),
+        method: :delete,
+        action: :destroy,
+        data: { confirm: "Are you sure you want to delete this review?" }%>
+        <% else %>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>

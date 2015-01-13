@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @locations = Location.all
@@ -32,14 +33,23 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
+#     @location = parent.locations.new(location_params)
+    @location.user = current_user
     if @location.save
-      redirect_to locations_path(@location[:id])
+     redirect_to locations_path(@location[:id])
+#      redirect_to parent
     else
-      render :new
+     render :new
+  #    render "locations/show"
     end
   end
 
   private
+
+  # def parent
+  #   @location ||= Location.find(params[:location_id])
+  # end
+
 
   def location_params
     params.require(:location).permit(:name, :description, :state, :town, :latitude, :longitude, :street, :size, :history, :private_land, :in_use)

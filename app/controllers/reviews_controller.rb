@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
     @review.location_id = @location_id
     # @review = Review.new(review_params)
     # @review.location = @location
+    @review.user = current_user
 
     if @review.save
       redirect_to location_path(@location.id)
