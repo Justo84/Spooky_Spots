@@ -1,0 +1,11 @@
+<h1> Spooky Spots! <h1>
+<h3><%= link_to "List a new Location", new_location_path(@location) %></h3>
+
+<h2> Locations </h2>
+
+
+<% @locations.each do |location| %>
+<h3><%= link_to location.name, location_path(location.id) %></h3>
+<div>&nbsp;</div>
+
+<% end %>

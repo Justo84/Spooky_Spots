@@ -1,0 +1,28 @@
+<h1> Write a Review for <%= @location.name %> </h1>
+
+<%= form_for [@location, @review] do |f| %>
+<div>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+
+<div>
+  <%= f.label :Spookiness %>
+  <%= f.select(:spo_rating, %w[1 2 3 4], {prompt: 'Spookiness'}) %>
+</div>
+
+<div>
+  <%= f.label :Scenery %>
+  <%= f.select(:sce_rating, %w[1 2 3 4], {prompt: 'Scenery'}) %>
+</div>
+
+<div>
+  <%= f.label :Exploration %>
+  <%= f.select(:exp_rating, %w[1 2 3 4], {prompt: 'Exploration'}) %>
+</div>
+
+<div>
+  <%= f.submit "Submit" %>
+</div>
+
+<% end %>

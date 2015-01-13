@@ -1,0 +1,25 @@
+<h1><%= @location.name %></h1>
+<div>&nbsp;</div>
+<h2><%= @location.description %></h2>
+<p>State: <%= @location.state %></p>
+<p>Town: <%= @location.town %></p>
+<p>Street:<%= @location.street %></p>
+<p>Size: <%= @location.size %></p>
+<p>History: <%= @location.history %></p>
+<p><%= @location.private_land %></p>
+<p><%= @location.in_use %></p>
+
+<div>&nbsp;</div>
+<%= link_to "Edit this Location", edit_location_path(@location) %>
+<div>&nbsp;</div>
+<%= link_to "Review this Location", new_location_review_path(@location) %>
+
+<div>&nbsp;</div>
+<h4> REVIEWS: </h4>
+<% @reviews.each do |r| %>
+<div> <%= r.description %></div>
+<div> Spookiness: <%= r.spo_rating %></div>
+<div> Scenery: <%= r.sce_rating %></div>
+<div> Exploration: <%= r.exp_rating %></div>
+<div>&nbsp;</div>
+<% end %>
