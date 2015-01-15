@@ -1,4 +1,4 @@
-<h1> Write a Review for <%= @location.name %> </h1>
+<h1> Update your review for <%= @location.name %> </h1>
 
 <%= form_for [@location, @review] do |f| %>
 
@@ -23,7 +23,7 @@
 </div>
 
 <div>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Update" %>
 </div>
 
 <% end %>

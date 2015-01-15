@@ -3,51 +3,69 @@
 <%= flash[:notice] %>
 
 <%= form_for @location do |f| %>
+
 <div>
   <%= f.label :name %>
   <%= f.text_field :name %>
 </div>
+
 <div>&nbsp;</div>
+
 <div>
   <%= f.label :description %>
   <%= f.text_area :description %>
 </div>
+
 <div>&nbsp;</div>
+
 <div>
   <%= f.label :history %>
   <%= f.text_area :history %>
 </div>
+
 <div>&nbsp;</div>
+
 <div>
   <%= f.label :state %>
   <%= f.select :state, %w[AL MT AK NE AZ NV AR NH CA NJ CO NM CT NY DE NC FL ND GA OH HI OK ID OR IL PA IN RI IA SC KS SD KY TN LA TX ME UT MD VT MA VA MI WA MN WV MS WI MO WY]%>
 </div>
+
 <div>&nbsp;</div>
+
 <div>
   <%= f.label :town %>
   <%= f.text_area :town %>
 </div>
+
 <div>&nbsp;</div>
+
 <div>
   <%= f.label :street %>
   <%= f.text_area :street %>
 </div>
+
 <div>&nbsp;</div>
+
 <div>
   <%= f.label :size %>
   <%= f.select(:size, %w[Tiny Small Moderate Big Huge]) %>
 </div>
+
 <div>&nbsp;</div>
+
 <div>
   <%= f.label :private_land %>
   <%= f.select(:private_land, %w[Private Public], {prompt: 'Private land?'}) %>
 </div>
-  <div>&nbsp;</div>
-  <div>
-    <%= f.label :in_use %>
-    <%= f.select(:in_use, ["In Use", "Not In Use"], {prompt: 'In Use?'}) %>
-  </div>
-  <div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>
+  <%= f.label :in_use %>
+  <%= f.select(:in_use, ["In Use", "Not In Use"], {prompt: 'In Use?'}) %>
+</div>
+
+<div>&nbsp;</div>
 
 <div>
   <%= f.submit "Submit" %>

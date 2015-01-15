@@ -1,6 +1,7 @@
 class Location < ActiveRecord::Base
   has_many :reviews
   belongs_to :user
+  has_many :location_images
 
   validates :name, presence: true
   validates :description, presence: true, length: {minimum: 10}

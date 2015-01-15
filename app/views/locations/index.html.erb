@@ -1,19 +1,20 @@
 <h1> Spooky Spots! <h1>
+
 <h3><%= link_to "List a new Location", new_location_path(@location) %></h3>
 
 <% if current_user %>
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-<%= link_to 'User Settings', edit_user_registration_path, method: :get %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <%= link_to 'User Settings', edit_user_registration_path, method: :get %>
 <% else %>
-<%= link_to 'Sign Up', new_user_registration_path %>
-<%= link_to 'Sign In', new_user_session_path %>
+  <%= link_to 'Sign Up', new_user_registration_path %>
+  <%= link_to 'Sign In', new_user_session_path %>
 <% end %>
 
 <h2> Locations </h2>
 
 
 <% @locations.each do |location| %>
-<h3><%= link_to location.name, location_path(location.id) %></h3>
-<div>&nbsp;</div>
+  <h3><%= link_to location.name, location_path(location.id) %></h3>
 
+  <div>&nbsp;</div>
 <% end %>

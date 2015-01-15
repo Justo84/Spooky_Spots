@@ -43,4 +43,7 @@ group :development, :test do
   gem 'spring'
   gem 'devise'
   gem 'quiet_assets'
+  gem 'carrierwave'
+  gem 'fog'
+  gem 'dotenv-rails'
 end

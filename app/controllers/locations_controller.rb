@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
 
   def update
     @location = Location.find(params[:id])
-    if @location.update_attributes(params[:location].permit(:name, :description, :state, :town, :street, :size, :history))
+    if @location.update_attributes(params[:location].permit(:name, :description, :state, :town, :street, :size, :history, :endorsed))
       flash[:notice] = "Location edited"
       redirect_to @location
     else
@@ -21,10 +21,17 @@ class LocationsController < ApplicationController
     end
   end
 
+  def destroy
+    @location = Location.find(params[:id])
+    @location.destroy
+    redirect_to root_path
+  end
 
   def show
     @location = Location.find(params[:id])
     @reviews = @location.reviews
+    @user = current_user
+    @image = LocationImage.new
   end
 
   def new
@@ -52,7 +59,7 @@ class LocationsController < ApplicationController
 
 
   def location_params
-    params.require(:location).permit(:name, :description, :state, :town, :latitude, :longitude, :street, :size, :history, :private_land, :in_use)
+    params.require(:location).permit(:name, :description, :state, :town, :latitude, :longitude, :street, :size, :history, :private_land, :in_use, :endorsed)
   end
 
 end
