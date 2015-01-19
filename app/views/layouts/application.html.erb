@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>SpookySpots</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
 
-<%= yield %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
 
-</body>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
