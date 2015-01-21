@@ -32,6 +32,7 @@ class LocationsController < ApplicationController
     @reviews = @location.reviews
     @user = current_user
     @image = LocationImage.new
+#    @location_review = Review.where(location_id: @location.id)
   end
 
   def new
@@ -59,7 +60,7 @@ class LocationsController < ApplicationController
 
 
   def location_params
-    params.require(:location).permit(:name, :description, :state, :town, :latitude, :longitude, :street, :size, :history, :private_land, :in_use, :endorsed)
+    params.require(:location).permit(:name, :description, :state, :town, :latitude, :longitude, :street, :size, :history, :private_land, :in_use)
   end
 
 end

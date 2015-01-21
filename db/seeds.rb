@@ -29,3 +29,15 @@ password_confirmation: "password",
 username: "User2",
 role: ""
 )
+
+Location.create(
+name: "Miskatonic University",
+state: "MA",
+town: "Arkham",
+description: "Miskatonic University is a university located in Arkham, a town in Essex County, Massachusetts. It is named after the Miskatonic River.",
+size: "Huge",
+history: "Miskatonic University is famous for its collection of Cthulhu Mythos arcane literature and occult books. The library at the university holds one of the few genuine copies of the Necronomicon. Other tomes held at the library include the Unaussprechlichen Kulten by Friedrich von Junzt and the fragmentary Book of Eibon. Miskatonic has a medical school.",
+private_land: "Yes",
+in_use: "Yes",
+user_id: 1
+)

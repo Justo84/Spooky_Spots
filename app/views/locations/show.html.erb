@@ -2,66 +2,73 @@
 
 <div>&nbsp;</div>
 
-<h2><%= @location.description %></h2>
+<div class="location">
+<h4><%= @location.description %></h4>
+</div>
 <p>State: <%= @location.state %></p>
 <p>Town: <%= @location.town %></p>
 <p>Street:<%= @location.street %></p>
 <p>Size: <%= @location.size %></p>
 <p>History: <%= @location.history %></p>
-<p><%= @location.private_land %></p>
-<p><%= @location.in_use %></p>
+<p>Private Land: <%= @location.private_land %></p>
+<p>In Use: <%= @location.in_use %></p>
+<% if @location.endorsed == true %>
+  <p> Endorsed By Spooky Spots </p>
+<% end %>
+
+
+<% if @user.role == "admin" %>
+    <% if @location.endorsed == false %>
+    <%= form_for [:admin, @location] do |f| %>
+      <%= f.hidden_field :endorsed, value: true %>
+      <%= f.submit "Endorse Location", class: "button success" %>
+    <% end %>
+    <% elsif @location.endorsed == true %>
+    <%= form_for [:admin, @location] do |f| %>
+      <%= f.hidden_field :endorsed, value: false %>
+      <%= f.submit "Un-Endorse Location", class: "button alert" %>
+    <% end %>
+  <% end %>
+<% end %>
 
 <div>&nbsp;</div>
 
-<div>
+<ul class="small-block-grid-3">
   <% @location.location_images.each do |location_image| %>
-  <%= image_tag(location_image.image.url, alt: location_image.description) %>
+  <li><%= image_tag(location_image.image.url, alt: location_image.description) %></li>
   <%= location_image.description %>
   <% end %>
-</div>
+</ul>
 
 <div>&nbsp;</div>
 
-<div>Upload a photo of <%= @location.name %></div>
+<div>Upload a photo of <%= @location.name %></div>-
 <%= form_for [@location, @image] do |f| %>
-<div>
-  <%= f.label :image, "Image" %>
-  <%= f.file_field :image %>
-</div>
-<div>
-  <%= f.label :description, "Image Description" %>
-  <%= f.text_field :description %>
-</div>
-<%= f.hidden_field :location_id, value: @location.id %>
-<%= f.submit "Add photo", class: "ui submit button" %>
+  <div>
+    <%= f.label :image, "Image" %>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.label :description, "Image Description" %>
+    <%= f.text_field :description %>
+  </div>
+  <%= f.hidden_field :location_id, value: @location.id %>
+  <%= f.submit "Add photo", class: "ui submit button" %>
 <% end %>
 </div>
 
 <div>&nbsp;</div>
 
-<% if @user && (@user == @location.user || @user.role == "admin") %>
-  <% if @user.role == "admin" %>
-    <%= button_to "Endorse Location",
-    method: :edit,
-    action: :update,
-    data: true %>
-  <% else %>
-  <% end %>
-
-  <div>&nbsp;</div>
-
-  <%= link_to "Edit this Location", edit_location_path(@location) %>
-  <%= button_to "Delete Location",
-  location_path(@location),
-  method: :delete,
-  action: :destroy,
-  data: { confirm: "Are you sure you want to delete this review?" }%>
-  <% else %>
-<% end %>
+<%= button_to "Edit this Location", edit_location_path(@location) %>
+<%= button_to "Delete Location",
+location_path(@location),
+method: :delete,
+action: :destroy,
+data: { confirm: "Are you sure you want to delete this review?" }%>
 
 <div>&nbsp;</div>
 
-<%= link_to "Review this Location", new_location_review_path(@location) %>
+<%= button_to "Review this Location", new_location_review_path(@location) %>
 
 <div>&nbsp;</div>
 

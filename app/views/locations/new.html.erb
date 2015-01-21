@@ -2,11 +2,15 @@
 
 <%= flash[:notice] %>
 
+<form>
+
 <%= form_for @location do |f| %>
 
-<div>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="row">
+  <div class="large-6 columns">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
 </div>
 
 <div>&nbsp;</div>
@@ -25,50 +29,65 @@
 
 <div>&nbsp;</div>
 
-<div>
-  <%= f.label :state %>
-  <%= f.select :state, %w[AL MT AK NE AZ NV AR NH CA NJ CO NM CT NY DE NC FL ND GA OH HI OK ID OR IL PA IN RI IA SC KS SD KY TN LA TX ME UT MD VT MA VA MI WA MN WV MS WI MO WY]%>
+<div class="row">
+  <div class="small-1 columns">
+    <%= f.label :state %>
+    <%= f.select :state, %w[AL MT AK NE AZ NV AR NH CA NJ CO NM CT NY DE NC FL ND GA OH HI OK ID OR IL PA IN RI IA SC KS SD KY TN LA TX ME UT MD VT MA VA MI WA MN WV MS WI MO WY]%>
+  </div>
 </div>
 
 <div>&nbsp;</div>
 
-<div>
+<div class="row">
+  <div class="small-3 columns">
   <%= f.label :town %>
   <%= f.text_area :town %>
+  </div>
 </div>
 
 <div>&nbsp;</div>
 
-<div>
+<div class="row">
+  <div class="small-4 columns">
   <%= f.label :street %>
   <%= f.text_area :street %>
+  </div>
 </div>
 
 <div>&nbsp;</div>
 
-<div>
-  <%= f.label :size %>
-  <%= f.select(:size, %w[Tiny Small Moderate Big Huge]) %>
+<div class="row">
+  <div class="small-2 columns">
+    <%= f.label :size %>
+    <%= f.select(:size, %w[Tiny Small Moderate Big Huge]) %>
+  </div>
 </div>
 
 <div>&nbsp;</div>
 
-<div>
-  <%= f.label :private_land %>
-  <%= f.select(:private_land, %w[Private Public], {prompt: 'Private land?'}) %>
+<div class="row">
+  <div class="small-2 columns">
+    <%= f.label :private_land %>
+    <%= f.select(:private_land, ["Yes", "No", "Unknown"], {prompt: 'Private land?'}) %>
+  </div>
 </div>
 
 <div>&nbsp;</div>
 
-<div>
+<div class="row">
+  <div class="small-2 columns">
   <%= f.label :in_use %>
-  <%= f.select(:in_use, ["In Use", "Not In Use"], {prompt: 'In Use?'}) %>
+  <%= f.select(:in_use, ["Yes", "No", "Unknown"], {prompt: 'In Use?'}) %>
+  </div>
 </div>
-
 <div>&nbsp;</div>
 
 <div>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "button expand" %>
 </div>
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 <% end %>

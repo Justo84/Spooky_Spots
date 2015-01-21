@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Spooky Spots" %></title>
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
@@ -12,6 +12,43 @@
 </head>
 
 <body>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#"><%= link_to'Spooky Spots', root_path %></a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="active"><a href="#">
+          <% if current_user %>
+           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+           <% else %>
+           <%= link_to 'Sign In', new_user_session_path %>
+           <% end %>
+         </a></li>
+        <li class="active"><a href="#">
+         <% if current_user %>
+           <%= link_to 'User Settings', edit_user_registration_path, method: :get %>
+           <% else %>
+           <%= link_to 'Sign Up', new_user_registration_path %>
+           <% end %>
+        </a></li>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li><a href="#">
+          <% if current_user %>
+          <%= link_to "Add New Spot", new_location_path(@location) %>
+          <% end %> </a></li>
+      </ul>
+    </section>
+  </nav>
   <div class="row">
     <div class="small-12 columns">
       <%= yield %>
