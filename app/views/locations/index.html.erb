@@ -1,9 +1,7 @@
 <h1> Spooky Spots! <h1>
 <h6> Share Your Scares </h6>
-
+<br>
+<br>
 <% @locations.each do |location| %>
-<div class="panel">
-  <%= link_to location.name, location_path(location.id) %>
-</div>
-  <div>&nbsp;</div>
+  <h3><%= link_to location.name, location_path(location.id) %> - <%= location.town %>, <%= location.state %></h3>
 <% end %>

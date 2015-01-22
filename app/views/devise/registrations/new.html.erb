@@ -2,24 +2,24 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+<br />
   <div class="row">
     <div class="small-4 columns">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.label :username, class:"form_text" %>
+    <%= f.text_field :username, autofocus: true %>
   </div>
 </div>
-
+<br />
 <div class="row">
   <div class="small-4 columns">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email, class:"form_text" %>
+    <%= f.email_field :email %>
   </div>
 </div>
-
+<br />
 <div class="row">
   <div class="small-4 columns">
-    <%= f.label :password %>
+    <%= f.label :password, class:"form_text" %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -29,13 +29,13 @@
 
 <div class="row">
   <div class="small-4 columns">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, class:"form_text" %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "button alert"%>
   </div>
 <% end %>
 

@@ -87,8 +87,9 @@ title {
 body {
   color: white;
   font-size: 130%;
-  text-shadow: 0px 0px 4px black ;
-  background-color: #FFB84D;
+  text-shadow: 0px 0px 4px black,
+  0px 0px 5px black;
+  background-color: black;
   font-family: 'Sorts Mill Goudy';
     background: url("Autumn-Morning-dark.jpg") no-repeat center center fixed;
     background-color: #000;
@@ -110,7 +111,8 @@ h2 {
 
 h3 {
   color: white;
-  font-family: 'Josefin Slab'
+  font-family: 'Josefin Slab';
+  font-weight: bold;
 }
 
 h4 {
@@ -127,7 +129,7 @@ h5 {
 
 h6 {
   color: white;
-  font-family: 'Almendra Display'
+  font-family: 'Josefin Slab'
 }
 
 .form_text {
@@ -137,19 +139,7 @@ h6 {
 }
 
 .image_select {
-  font-family: 'Anaheim';
-  color: white;
-  font-size: 100%;
-}
-
-.indie {
-  font-family: 'Anaheim';
-  color: white;
-  font-size: 100%;
-}
-
-.top-bar {
-  font-family: 'Almendra Display';
+  font-family: 'Josefin Slab';
   color: white;
   font-size: 100%;
 }
