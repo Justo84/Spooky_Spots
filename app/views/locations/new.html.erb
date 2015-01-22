@@ -1,15 +1,13 @@
-<h1> Create a New Location </h1>
+<h1> Create a New Spot </h1>
 
-<%= flash[:notice] %>
 
-<form>
 
 <%= form_for @location do |f| %>
-
-<div class="row">
+<form>
+  <div class="row">
   <div class="large-6 columns">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => "Give a good spooky name to your discovered spot." %>
   </div>
 </div>
 
@@ -17,14 +15,14 @@
 
 <div>
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, :placeholder => "What's at the spot?  What is there to explore and see?  Any good scares?" %>
 </div>
 
 <div>&nbsp;</div>
 
 <div>
   <%= f.label :history %>
-  <%= f.text_area :history %>
+  <%= f.text_area :history, :placeholder => "Know any history about the spot?  If not leave blank." %>
 </div>
 
 <div>&nbsp;</div>
@@ -68,7 +66,7 @@
 <div class="row">
   <div class="small-2 columns">
     <%= f.label :private_land %>
-    <%= f.select(:private_land, ["Yes", "No", "Unknown"], {prompt: 'Private land?'}) %>
+    <%= f.select(:private_land, ["Unknown", "Yes", "No"]) %>
   </div>
 </div>
 
@@ -77,7 +75,7 @@
 <div class="row">
   <div class="small-2 columns">
   <%= f.label :in_use %>
-  <%= f.select(:in_use, ["Yes", "No", "Unknown"], {prompt: 'In Use?'}) %>
+  <%= f.select(:in_use, ["Unknown", "Yes", "No"]) %>
   </div>
 </div>
 <div>&nbsp;</div>
@@ -85,7 +83,7 @@
 <div>
   <%= f.submit "Submit", class: "button expand" %>
 </div>
-
+</form>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
 <div>&nbsp;</div>

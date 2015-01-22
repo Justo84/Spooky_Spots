@@ -6,15 +6,13 @@ class LocationsController < ApplicationController
   end
 
   def edit
-#    @errors = @review.errors.full_messages
     @location = Location.find(params[:id])
   end
 
   def update
     @location = Location.find(params[:id])
     if @location.update_attributes(params[:location].permit(:name, :description, :state, :town, :street, :size, :history, :endorsed))
-      flash[:notice] = "Location edited"
-      redirect_to @location
+      redirect_to parent
     else
       @location = parent
       render "locations/edit"
@@ -32,7 +30,6 @@ class LocationsController < ApplicationController
     @reviews = @location.reviews
     @user = current_user
     @image = LocationImage.new
-#    @location_review = Review.where(location_id: @location.id)
   end
 
   def new
@@ -41,22 +38,19 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
-#     @location = parent.locations.new(location_params)
     @location.user = current_user
     if @location.save
-     redirect_to locations_path(@location[:id])
-#      redirect_to parent
+     redirect_to location_path(@location)
     else
-     render :new
-  #    render "locations/show"
+      render "locations/new"
     end
   end
 
   private
 
-  # def parent
-  #   @location ||= Location.find(params[:location_id])
-  # end
+  def parent
+    @location ||= Location.find(params[:location_id])
+  end
 
 
   def location_params

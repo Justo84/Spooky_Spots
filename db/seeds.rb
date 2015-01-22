@@ -41,3 +41,38 @@ private_land: "Yes",
 in_use: "Yes",
 user_id: 1
 )
+
+Location.create(
+name: "Devil Reef",
+state: "MA",
+town: "Innsmouth",
+street: "Devil's Highway",
+description: "An offshore rock formation located in the sea near Innsmouth.",
+size: "Huge",
+history: "In 1846 during a sacrificial ritual at the reef Captain Marsh and several members of the Esoteric Order of Dagon were arrested, though no formal charges were made.  It was destroyed during the government raid of 1928.",
+private_land: "No",
+in_use: "No",
+user_id: 2
+)
+
+Location.create(
+name: "Dunwich Horror",
+state: "MA",
+town: "Dunwich",
+street: "Miskatonic Valley",
+description: "A well filled with... something evil.",
+size: "Tiny",
+history: "In the isolated, desolate and decrepit village of Dunwich, Wilbur Whateley is the hideous son of Lavinia Whateley, a deformed and unstable albino mother, and an unknown father (alluded to in passing by mad Old Whateley, as 'Yog-Sothoth'), and strange events surround his birth and precocious development. ",
+private_land: "No",
+in_use: "No",
+user_id: 2
+)
+
+Review.create(
+description: "Pretty creepy.  I got scared alot and left my girlfriend behind.  Never saw her again.  Would visit again!",
+spo_rating: "4",
+sce_rating: "1",
+exp_rating: "2",
+location_id: 3,
+user_id: 1
+)

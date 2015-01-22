@@ -1,19 +1,9 @@
 <h1> Spooky Spots! <h1>
-
-  <ul class="accordion" data-accordion>
-    <% @locations.each do |location| %>
-    <li class="accordion-navigation">
-      <a href="#panel1a"> <%= link_to location.name, location_path(location.id)%> </a>
-      <div id="panel1a" class="content active">
-        <%= location.description %>
-      </div>
-    </li>
-  </ul>
-<% end %>
-
+<h6> Share Your Scares </h6>
 
 <% @locations.each do |location| %>
+<div class="panel">
   <h3><%= link_to location.name, location_path(location.id) %></h3>
-
+</div>
   <div>&nbsp;</div>
 <% end %>

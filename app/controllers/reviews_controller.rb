@@ -1,9 +1,5 @@
 class ReviewsController < ApplicationController
 
-  # def show
-  #
-  # end
-
   def edit
     #    @errors = @review.errors.full_messages
     @location = Location.find(params[:location_id])

@@ -4,11 +4,11 @@ class Location < ActiveRecord::Base
   has_many :location_images
 
   validates :name, presence: true
-  validates :description, presence: true, length: {minimum: 10}
+  validates :description, presence: true, length: {minimum: 1}
   validates :state, presence: true
   validates :town, presence: true
   validates :size, presence: true
-  validates :history, presence: true, length: {minimum: 10}
+  validates :history, presence: true, length: {minimum: 1}
   validates :user_id, presence: true
 
 end
