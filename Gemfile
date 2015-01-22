@@ -47,3 +47,4 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'dotenv-rails'
 end
+ruby "2.2.0"
