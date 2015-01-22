@@ -3,27 +3,27 @@
 <%= form_for [@location, @review] do |f| %>
 
 <div>
-  <%= f.label :description %>
+  <%= f.label :review, class:"form_text" %>
   <%= f.text_area :description %>
 </div>
 
 <div>
-  <%= f.label :Spookiness %>
+  <%= f.label :Spookiness, class:"form_text" %>
   <%= f.select(:spo_rating, %w[1 2 3 4], {prompt: 'Spookiness'}) %>
 </div>
 
 <div>
-  <%= f.label :Scenery %>
+  <%= f.label :Scenery, class:"form_text" %>
   <%= f.select(:sce_rating, %w[1 2 3 4], {prompt: 'Scenery'}) %>
 </div>
 
 <div>
-  <%= f.label :Exploration %>
+  <%= f.label :Exploration, class:"form_text" %>
   <%= f.select(:exp_rating, %w[1 2 3 4], {prompt: 'Exploration'}) %>
 </div>
 
 <div>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "button alert expand"  %>
 </div>
 
 <% end %>

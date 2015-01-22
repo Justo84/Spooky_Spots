@@ -29,7 +29,6 @@ class ReviewsController < ApplicationController
     @location = Location.find(params[:location_id])
     @review = Review.new(review_params)
     @review.location_id = @location_id
-    # @review = Review.new(review_params)
     # @review.location = @location
     @review.user = current_user
 

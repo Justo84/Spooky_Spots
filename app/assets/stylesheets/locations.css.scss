@@ -17,15 +17,6 @@
 
 /* latin */
 @font-face {
-  font-family: 'Shadows Into Light';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Shadows Into Light'), local('ShadowsIntoLight'), url(http://fonts.gstatic.com/s/shadowsintolight/v6/clhLqOv7MXn459PTh0gXYKkG_nMAIv3PPZbC2XDns-o.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-/* latin */
-@font-face {
   font-family: 'Josefin Slab';
   font-style: normal;
   font-weight: 400;
@@ -67,8 +58,26 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+/* latin-ext */
+@font-face {
+  font-family: 'Sorts Mill Goudy';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url(http://fonts.gstatic.com/s/sortsmillgoudy/v6/JzRrPKdwEnE8F1TDmDLMUij4p5aueV9Rx20pZWq5xiU.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Sorts Mill Goudy';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url(http://fonts.gstatic.com/s/sortsmillgoudy/v6/JzRrPKdwEnE8F1TDmDLMUlQK7fulol8x5Tt6iGGul9Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 title {
-  color: white
+  color: white;
+  font-family: 'Josefin Slab';
 }
 
 .location {
@@ -78,9 +87,10 @@ title {
 body {
   color: white;
   font-size: 130%;
+  text-shadow: 0px 0px 4px black ;
   background-color: #FFB84D;
-  font-family: 'Josefin Slab';
-    background: url("mmi.gif") no-repeat center center fixed;
+  font-family: 'Sorts Mill Goudy';
+    background: url("Autumn-Morning-dark.jpg") no-repeat center center fixed;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -93,19 +103,19 @@ h1 {
   font-family: 'Almendra Display';
 }
 
-h6 {
+h2 {
   color: white;
-  font-family: 'Almendra Display'
+  font-family: 'Josefin Slab'
 }
 
 h3 {
   color: white;
-  font-family: 'Almendra Display'
+  font-family: 'Josefin Slab'
 }
 
 h4 {
   color: white;
-  font-family: 'Economica'
+  font-family: 'Almendra Display'
 }
 
 h5 {
@@ -115,6 +125,31 @@ h5 {
   font-size: 110%;
 }
 
-nav {
-  font-family: 'Economica';
+h6 {
+  color: white;
+  font-family: 'Almendra Display'
+}
+
+.form_text {
+  font-family: 'Josefin Slab';
+  color: white;
+  font-size: 110%;
+}
+
+.image_select {
+  font-family: 'Anaheim';
+  color: white;
+  font-size: 100%;
+}
+
+.indie {
+  font-family: 'Anaheim';
+  color: white;
+  font-size: 100%;
+}
+
+.top-bar {
+  font-family: 'Almendra Display';
+  color: white;
+  font-size: 100%;
 }

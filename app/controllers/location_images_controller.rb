@@ -14,7 +14,7 @@ class LocationImagesController < ApplicationController
 
       # @reviews = @location.reviews.page params[:page]
       # @review = Review.new
-            
+
       render "locations/show"
     end
   end

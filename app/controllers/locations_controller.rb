@@ -30,6 +30,9 @@ class LocationsController < ApplicationController
     @reviews = @location.reviews
     @user = current_user
     @image = LocationImage.new
+    @spo_average = Review.where(location_id:params[:id]).average("spo_rating")
+    @sce_average = Review.where(location_id:params[:id]).average("sce_rating")
+    @exp_average = Review.where(location_id:params[:id]).average("exp_rating")
   end
 
   def new

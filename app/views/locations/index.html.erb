@@ -3,7 +3,7 @@
 
 <% @locations.each do |location| %>
 <div class="panel">
-  <h3><%= link_to location.name, location_path(location.id) %></h3>
+  <%= link_to location.name, location_path(location.id) %>
 </div>
   <div>&nbsp;</div>
 <% end %>

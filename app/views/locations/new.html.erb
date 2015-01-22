@@ -3,10 +3,9 @@
 
 
 <%= form_for @location do |f| %>
-<form>
   <div class="row">
   <div class="large-6 columns">
-    <%= f.label :name %>
+    <%= f.label :name, class: "form_text" %>
     <%= f.text_field :name, :placeholder => "Give a good spooky name to your discovered spot." %>
   </div>
 </div>
@@ -14,14 +13,14 @@
 <div>&nbsp;</div>
 
 <div>
-  <%= f.label :description %>
+  <%= f.label :description, class:"form_text" %>
   <%= f.text_area :description, :placeholder => "What's at the spot?  What is there to explore and see?  Any good scares?" %>
 </div>
 
 <div>&nbsp;</div>
 
 <div>
-  <%= f.label :history %>
+  <%= f.label :history, class:"form_text" %>
   <%= f.text_area :history, :placeholder => "Know any history about the spot?  If not leave blank." %>
 </div>
 
@@ -29,7 +28,7 @@
 
 <div class="row">
   <div class="small-1 columns">
-    <%= f.label :state %>
+    <%= f.label :state, class:"form_text" %>
     <%= f.select :state, %w[AL MT AK NE AZ NV AR NH CA NJ CO NM CT NY DE NC FL ND GA OH HI OK ID OR IL PA IN RI IA SC KS SD KY TN LA TX ME UT MD VT MA VA MI WA MN WV MS WI MO WY]%>
   </div>
 </div>
@@ -38,7 +37,7 @@
 
 <div class="row">
   <div class="small-3 columns">
-  <%= f.label :town %>
+  <%= f.label :town, class:"form_text" %>
   <%= f.text_area :town %>
   </div>
 </div>
@@ -47,8 +46,8 @@
 
 <div class="row">
   <div class="small-4 columns">
-  <%= f.label :street %>
-  <%= f.text_area :street %>
+  <%= f.label :street, class: "form_text" %>
+  <%= f.text_area :street, :placeholder => "If applicable" %>
   </div>
 </div>
 
@@ -56,7 +55,7 @@
 
 <div class="row">
   <div class="small-2 columns">
-    <%= f.label :size %>
+    <%= f.label :size, class: "form_text" %>
     <%= f.select(:size, %w[Tiny Small Moderate Big Huge]) %>
   </div>
 </div>
@@ -65,7 +64,7 @@
 
 <div class="row">
   <div class="small-2 columns">
-    <%= f.label :private_land %>
+    <%= f.label :private_land, class: "form_text" %>
     <%= f.select(:private_land, ["Unknown", "Yes", "No"]) %>
   </div>
 </div>
@@ -74,16 +73,15 @@
 
 <div class="row">
   <div class="small-2 columns">
-  <%= f.label :in_use %>
+  <%= f.label :in_use, class: "form_text" %>
   <%= f.select(:in_use, ["Unknown", "Yes", "No"]) %>
   </div>
 </div>
 <div>&nbsp;</div>
 
 <div>
-  <%= f.submit "Submit", class: "button expand" %>
+  <%= f.submit "Submit", class: "button alert expand" %>
 </div>
-</form>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
