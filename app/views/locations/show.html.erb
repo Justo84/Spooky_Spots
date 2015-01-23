@@ -1,4 +1,5 @@
 <h1><%= @location.name %></h1>
+<h6 align="right">Added by:&nbsp; <%= @location.user.username %> </h6>
 
 <div>&nbsp;</div>
 
@@ -25,10 +26,11 @@
 <div>&nbsp;</div>
 
 <% if @sce_average && @spo_average && @exp_average != nil %>
-  <h4> Ratings: </h4>
-  <h2>Spookiness: <%=@spo_average.round(1)%> &nbsp;&nbsp;&nbsp;&nbsp;  Scenery: <%=@sce_average.round(1)%> &nbsp;&nbsp;&nbsp;&nbsp; Exploration: <%=@exp_average.round(1)%> </h2>
+  <h4> Average Ratings: </h4>
+  <h2 align="center">Spookiness: <%=@spo_average.round(1)%> &nbsp;&nbsp;&nbsp;&nbsp;  Scenery: <%=@sce_average.round(1)%> &nbsp;&nbsp;&nbsp;&nbsp; Exploration: <%=@exp_average.round(1)%> </h2>
 <% else %>
   <h4> No Ratings Yet </h4>
+
 <% end %>
 
 <div>&nbsp;</div>
@@ -53,7 +55,7 @@
     <% end %>
 <% end %>
 
-<a href="edit_location_path(@location)" class="button tiny">Edit Location</a>
+<%= link_to "Edit Location", edit_location_path(@location), class: "button tiny" %>
 
 <%= button_to "Delete Location",
 location_path(@location),
@@ -96,43 +98,43 @@ class: "button alert tiny"%>
 <div>&nbsp;</div>
 
 <%= button_to "Review this Location", new_location_review_path(@location), method: "get", class: "button success tiny" %>
-<div>&nbsp;</div>
 
+<% if @reviews == [] %>
+<h4> No Reviews Yet </h4>
+<% else %>
 <h4> REVIEWS: </h4>
 <% @reviews.each do |review| %>
-  <div><h5> <%= review.description %></h5></div>
-  <table>
-    <thead>
-      <tr>
-        <th width="200"><u>Catagory</u></th>
-        <th width="20"><u>Score</u></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Spookiness</td>
-        <td><%= review.spo_rating %></td>
-      </tr>
-      <tr>
-        <td>Scenery</td>
-        <td><%= review.sce_rating %></td>
-      </tr>
-      <tr>
-        <td>Exporation</td>
-        <td><%= review.exp_rating %></td>
-      </tr>
-    </tbody>
-  </table>
-    <h6><% if @user && (@user == review.user || @user.role == "admin") %>
-      &nbsp;&nbsp;&nbsp;<%= link_to "Edit", edit_location_review_path(@location, review)%> &nbsp;&nbsp;&nbsp;&nbsp;
-      <%= link_to "Delete",
-      location_review_path(@location, review),
-      method: :delete,
-      action: :destroy%></h6>
-    <% else %>
-    <% end %>
-    <div>&nbsp;</div>
+<div><h5> <%= review.description %></h5></div>
+<table>
+  <tr>
+    <th><u>Catagory</u></th>
+    <th><u>Score</u></th>
+  </tr>
+  <tr>
+    <td>Spookiness</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= review.spo_rating %></td>
+  </tr>
+  <tr>
+    <td>Scenery</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= review.sce_rating %></td>
+  </tr>
+  <tr>
+    <td>Exploration</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= review.exp_rating %></td>
+  </tr>
+</table>
+<h6><% if @user && (@user == review.user || @user.role == "admin") %>
+  &nbsp;&nbsp;&nbsp;<%= link_to "Edit", edit_location_review_path(@location, review)%> &nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to "Delete",
+  location_review_path(@location, review),
+  method: :delete,
+  action: :destroy%></h6>
+  <% else %>
+  <% end %>
+  <div>&nbsp;</div>
+  <% end %>
 <% end %>
+
 
 <div>&nbsp;</div>
 <div>&nbsp;</div>
