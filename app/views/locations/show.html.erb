@@ -65,29 +65,29 @@ class: "button alert tiny"%>
 
 <ul class="small-block-grid-3">
   <% @location.location_images.each do |location_image| %>
-  <li><%= image_tag(location_image.image.url, alt: location_image.description) %></li>
-  <%= location_image.description %>
+  <li><%= image_tag(location_image.image.url, alt: location_image.description) %><%= location_image.description %></li>
   <% end %>
 </ul>
 
 <div>&nbsp;</div>
-
 <div>Upload a photo of <%= @location.name %></div>
 <%= form_for [@location, @image] do |f| %>
   <div>
-
     <%= f.label :image, "Image Select", class:"image_select" %>
     <%= f.file_field :image%>
   </div>
   <div>
-    <%= f.label :description, "Image Description", class:"image_select" %>
+    <div class="small-4 columns">
+    <%= f.label :description, "Image Description", class:"form_text" %>
     <%= f.text_field :description %>
+    </div>
   </div>
+  <br>
   <%= f.hidden_field :location_id, value: @location.id %>
   <%= f.submit "Add photo", class: "button alert tiny" %>
 <% end %>
 </div>
-
+<br>
 <div>&nbsp;</div>
 
 <%= button_to "Review this Location", new_location_review_path(@location), method: "get", class: "button success tiny" %>
@@ -95,12 +95,12 @@ class: "button alert tiny"%>
 
 <h4> REVIEWS: </h4>
 <% @reviews.each do |review| %>
-  <div> <%= review.description %></div>
+  <div><h5> <%= review.description %></h5></div>
   <table>
     <thead>
       <tr>
-        <th width="200">Catagory</th>
-        <th width="20">Score</th>
+        <th width="200"><u>Catagory</u></th>
+        <th width="20"><u>Score</u></th>
       </tr>
     </thead>
     <tbody>

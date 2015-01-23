@@ -8,4 +8,3 @@ class UsersController < ApplicationController
     devise_parameter_sanitizer.for(:sign_up) << :username
   end
 end
-end

@@ -1,7 +1,9 @@
 class LocationImagesController < ApplicationController
   def create
     @image = LocationImage.new(location_image_params)
-
+    @location = Location.find(params[:location_id])
+    @reviews = @location.reviews
+    
     if @image.save
       flash[:notice] = "Image posted"
       redirect_to location_path(@image.location_id)
@@ -9,7 +11,6 @@ class LocationImagesController < ApplicationController
     else
       flash[:notice] = "Upload failed"
 
-      @location = Location.find(params[:location_id])
       @user = current_user
 
       # @reviews = @location.reviews.page params[:page]
