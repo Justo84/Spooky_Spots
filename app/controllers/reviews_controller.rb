@@ -1,9 +1,10 @@
 class ReviewsController < ApplicationController
+  before_filter :authorize!
 
   def edit
-    #    @errors = @review.errors.full_messages
     @location = Location.find(params[:location_id])
     @review = Review.find(params[:id])
+    authenticate_review(@review)
   end
 
   def update
@@ -12,12 +13,9 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review edited"
       redirect_to parent
     else
-#      @review = parent
-#      render "locations/edit"
        render :new
     end
   end
-
 
   def new
     @location = Location.find(params[:location_id])
@@ -29,12 +27,11 @@ class ReviewsController < ApplicationController
     @location = Location.find(params[:location_id])
     @review = Review.new(review_params)
     @review.location_id = @location_id
-    # @review.location = @location
     @review.user = current_user
 
     if @review.save
+      flash[:notice] = "Review created"
       redirect_to location_path(@location.id)
-      # redirect_to parent
     else
       render :new
     end
@@ -45,6 +42,7 @@ class ReviewsController < ApplicationController
     return unless authenticate_review(@review)
     @location = @review.location
     @review.destroy
+    flash[:notice] = "Review deleted"
     redirect_to location_path(@location)
   end
 

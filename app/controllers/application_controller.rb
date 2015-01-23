@@ -30,6 +30,15 @@ class ApplicationController < ActionController::Base
     true
   end
 
+  def authenticate_image(image)
+    if current_user.id != image.user_id && current_user.role != "admin"
+      flash[:notice] = "Only the owner for this image can do that"
+      redirect_to location_path(image.location_id)
+      return false
+    end
+    true
+  end
+
   protected
 
   def configure_permitted_parameters

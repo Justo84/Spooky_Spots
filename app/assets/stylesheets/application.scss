@@ -2,3 +2,13 @@
 //= require foundation.min
 //= require_tree .
 //= require_self
+
+
+.ui.message.red {
+  margin-left: 69px;
+  z-index: -9;
+}
+
+ul.title-area {
+  z-index: 3;
+}

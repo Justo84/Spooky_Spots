@@ -65,7 +65,12 @@ class: "button alert tiny"%>
 
 <ul class="small-block-grid-3">
   <% @location.location_images.each do |location_image| %>
-  <li><%= image_tag(location_image.image.url, alt: location_image.description) %><%= location_image.description %></li>
+  <li><%= image_tag(location_image.image.url, alt: location_image.description) %><%= location_image.description %>
+    <% if @user && (@user == location_image.user || @user.role == "admin") %><%= link_to "Delete",
+    location_location_image_path(@location, location_image),
+    method: :delete,
+    action: :destroy%></li>
+    <% end %>
   <% end %>
 </ul>
 
@@ -85,7 +90,7 @@ class: "button alert tiny"%>
   <br>
   <%= f.hidden_field :location_id, value: @location.id %>
   <%= f.submit "Add photo", class: "button alert tiny" %>
-<% end %>
+  <% end %>
 </div>
 <br>
 <div>&nbsp;</div>
