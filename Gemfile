@@ -27,6 +27,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'devise'
 gem 'rails_12factor'
+gem 'kaminari'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
