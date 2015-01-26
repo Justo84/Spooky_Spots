@@ -55,13 +55,17 @@
     <% end %>
 <% end %>
 
-<%= link_to "Edit Location", edit_location_path(@location), class: "button tiny" %>
+<% if @user && (@user == @location.user || @user.role == "admin") %>
+  <%= link_to "Edit Location", edit_location_path(@location), class: "button tiny" %>
+<% end %>
 
-<%= button_to "Delete Location",
-location_path(@location),
-method: :delete,
-action: :destroy,
-class: "button alert tiny"%>
+<% if @user && @user.role == "admin" %>
+  <%= button_to "Delete Location",
+  location_path(@location),
+  method: :delete,
+  action: :destroy,
+  class: "button alert tiny"%>
+<% end %>
 
 <div>&nbsp;</div>
 

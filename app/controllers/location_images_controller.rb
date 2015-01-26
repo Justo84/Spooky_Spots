@@ -10,7 +10,6 @@ class LocationImagesController < ApplicationController
       redirect_to location_path(@image.location_id)
     else
       flash[:notice] = "Upload failed"
-      # @user = current_user
       render "locations/show"
     end
   end
