@@ -3,11 +3,14 @@
 <div align="center"> <h6> Share Your Scares </h6> </div>
 <br>
 
-<%= form_tag(locations_path, method: "get") do %>
-  <%= text_field_tag(:search, params[:search], placeholder: "Search Locataions") %>
-<%= submit_tag "Search", class: "button" %>
-<% end %>
-
+<div align="right", class="row">
+  <div align="right", class="small-4 columns">
+    <%= form_tag(locations_path, method: "get") do %>
+      <%= text_field_tag(:search, params[:search], placeholder: "Search Locations", class:"form_text") %>
+      <%= submit_tag "Search", class: "button" %>
+    <% end %>
+  </div>
+</div>
 
 <br>
 <% @locations.each do |location| %>

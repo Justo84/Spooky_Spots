@@ -5,7 +5,7 @@ class LocationsController < ApplicationController
     if params[:search]
       @locations = Location.search(params[:search])
       if @locations.empty?
-        flash[:notice] = "No matches."
+        # flash[:notice] = "No matches."
       end
     else
       @locations = Location.all

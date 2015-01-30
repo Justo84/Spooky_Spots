@@ -80,6 +80,7 @@
   <% end %>
 </ul>
 
+<% if @user %>
 <div>&nbsp;</div>
 <div>Upload a photo of <%= @location.name %></div>
 <%= form_for [@location, @image] do |f| %>
@@ -100,8 +101,16 @@
 </div>
 <br>
 <div>&nbsp;</div>
+<% else %>
+Sign in to add photos
+<br>
+<% end %>
 
+<% if @user %>
 <%= button_to "Review this Location", new_location_review_path(@location), method: "get", class: "button success tiny" %>
+<% else %>
+Sign in to review <%= @location.name %>
+<% end %>
 
 <% if @reviews == [] %>
 <h4> No Reviews Yet </h4>
