@@ -27,7 +27,7 @@
   <div class="col-2-3">
     <h4>History: </h4>
     <h5><%= @location.history %></h5>
-    <div>&nbsp;</div>
+
   </div>
   <div class="col-1-3">
     <h4>Size: </h4>
@@ -36,10 +36,12 @@
     <h5><%= @location.private_land %></h5>
     <h4>In Use: </h4>
     <h5><%= @location.in_use %></h5>
-    <div>&nbsp;</div>
+
   </div>
 </div>
 
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 <% if @sce_average && @spo_average && @exp_average != nil %>
   <h4> Average Ratings: </h4>
