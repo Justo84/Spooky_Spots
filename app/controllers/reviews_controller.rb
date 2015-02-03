@@ -33,6 +33,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review created"
       redirect_to location_path(@location.id)
     else
+      flash[:notice] = "Please fill out form completely"
       render :new
     end
   end
