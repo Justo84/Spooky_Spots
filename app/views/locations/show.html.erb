@@ -99,35 +99,37 @@
 </ul>
 
 <% if @user %>
-<div>&nbsp;</div>
-<div>Upload a photo of <%= @location.name %></div>
-<%= form_for [@location, @image] do |f| %>
-  <div>
-    <%= f.label :image, "Image Select", class:"image_select" %>
-    <%= f.file_field :image%>
-  </div>
-  <div>
-    <div class="small-4 columns">
-    <%= f.label :description, "Image Description", class:"form_text" %>
-    <%= f.text_field :description %>
+  <div>&nbsp;</div>
+  <div>Upload a photo of <%= @location.name %></div>
+  <%= form_for [@location, @image] do |f| %>
+    <div>
+      <%= f.label :image, "Image Select", class:"image_select" %>
+      <%= f.file_field :image %>
     </div>
+    <div>
+      <div class="small-4 columns">
+        <%= f.label :description, "Image Description", class:"form_text" %>
+        <%= f.text_field :description %>
+      </div>
+    </div>
+    <br>
+    <%= f.hidden_field :location_id, value: @location.id %>
+    <%= f.submit "Add photo", class: "button alert tiny" %>
+  <% end %>
   </div>
   <br>
-  <%= f.hidden_field :location_id, value: @location.id %>
-  <%= f.submit "Add photo", class: "button alert tiny" %>
-  <% end %>
-</div>
-<br>
-<div>&nbsp;</div>
+  <div>&nbsp;</div>
 <% else %>
-Sign in to add photos
-<br>
+  <div>&nbsp;</div>
+  Sign in to add photos
+  <div>&nbsp;</div>
 <% end %>
 
 <% if @user %>
 <%= button_to "Review this Location", new_location_review_path(@location), method: "get", class: "button success tiny" %>
 <% else %>
 Sign in to review <%= @location.name %>
+<div>&nbsp;</div>
 <% end %>
 
 <% if @reviews == [] %>
