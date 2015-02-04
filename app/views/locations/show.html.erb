@@ -89,10 +89,11 @@
 <ul class="small-block-grid-3">
   <% @location.location_images.each do |location_image| %>
   <li><%= image_tag(location_image.image.url, alt: location_image.description) %><%= location_image.description %>
-    <% if @user && (@user == location_image.user || @user.role == "admin") %><%= link_to "Delete",
+    <% if @user && (@user == location_image.user || @user.role == "admin") %><%= button_to "Delete image",
     location_location_image_path(@location, location_image),
     method: :delete,
-    action: :destroy%></li>
+    action: :destroy,
+    class: "button alert tiny"%></li>
     <% end %>
   <% end %>
 </ul>
