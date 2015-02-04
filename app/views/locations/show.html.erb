@@ -3,8 +3,8 @@
 
 <div>&nbsp;</div>
 
-
 <div class="grid">
+
   <div class="col-2-3">
     <div class="location">
       <h3><%= @location.description %></h3>
@@ -16,12 +16,11 @@
     <h5><%= @location.state %></h5>
     <h4>Town: </h4>
     <h5><%= @location.town %></h5>
-    <% if @location.street != nil %>
-    <h4>Street: </h4>
-    <h5><%= @location.street %> </h5>
+    <% if @location.street != "" %>
+      <h4>Street: </h4>
+      <h5><%= @location.street %> </h5>
     <% end %>
     <div>&nbsp;</div>
-
   </div>
 
   <div class="col-2-3">
