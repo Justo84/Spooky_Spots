@@ -11,9 +11,31 @@ class Location < ActiveRecord::Base
   validates :history, presence: true
   validates :user_id, presence: true
 
+  # def self.search(query)
+  #   where("name like ?", "%#{query}%")
+  # end
+
   def self.search(query)
     where("name like ?", "%#{query}%")
+    where("name ilike :q or state ilike :q or town ilike :q", q: "%#{query}%")
   end
+
+
+  # def self.search(search)
+  #   if search
+  #     where(:conditions => ['name LIKE ?', "%#{search}%"])
+  #   else
+  #
+  #   end
+  # end
+  #
+  # def self.search(search)
+  #   if search
+  #     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  #   else
+  #     find(:all)
+  #   end
+  # end
 
   # def self.search(query)
   #   query = "%" + search + "%"

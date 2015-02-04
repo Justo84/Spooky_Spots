@@ -2,15 +2,15 @@ class LocationsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    if params[:search]
+    # if params[:search]
       @locations = Location.search(params[:search])
-      if @locations.empty?
-        # flash[:notice] = "No matches."
-      end
-    else
-      @locations = Location.all
-    end
-    # @locations = Location.all
+      # if @locations.empty?
+        ## flash[:notice] = "No matches."
+      # end
+    # else
+      # @locations = Location.all
+    # end
+    ## @locations = Location.all
   end
 
   def edit
