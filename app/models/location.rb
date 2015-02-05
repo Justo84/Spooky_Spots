@@ -15,4 +15,6 @@ class Location < ActiveRecord::Base
     where("name ilike :q or state ilike :q or town ilike :q", q: "%#{query}%")
   end
 
+  paginates_per 10
+  
 end

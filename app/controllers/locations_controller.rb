@@ -27,7 +27,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    @reviews = @location.reviews
+    @reviews = @location.reviews.page(params[:page]).per(3)
     @user = current_user
     @image = LocationImage.new
     @spo_average = Review.where(location_id:params[:id]).average("spo_rating")

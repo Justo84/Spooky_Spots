@@ -1,0 +1,36 @@
+<% if @reviews == [] %>
+  <h4> No Reviews Yet </h4>
+<% else %>
+  <h4> REVIEWS: </h4>
+  <% @reviews.each do |review| %>
+    <div><h5> <%= review.description %></h5></div>
+    <table>
+      <tr>
+        <th><u>Catagory</u></th>
+        <th><u>Score</u></th>
+      </tr>
+      <tr>
+        <td>Spookiness</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= review.spo_rating %></td>
+      </tr>
+      <tr>
+        <td>Scenery</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= review.sce_rating %></td>
+      </tr>
+      <tr>
+        <td>Exploration</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= review.exp_rating %></td>
+      </tr>
+    </table>
+    <h6><% if @user && (@user == review.user || @user.role == "admin") %>
+      &nbsp;&nbsp;&nbsp;<%= link_to "Edit", edit_location_review_path(@location, review)%> &nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to "Delete",
+      location_review_path(@location, review),
+      method: :delete,
+      action: :destroy%></h6>
+    <% else %>
+    <% end %>
+    <div>&nbsp;</div>
+  <% end %>
+  <%= paginate @reviews %>
+<% end %>
