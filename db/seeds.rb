@@ -39,7 +39,9 @@ size: "Huge",
 history: "Miskatonic University is famous for its collection of Cthulhu Mythos arcane literature and occult books. The library at the university holds one of the few genuine copies of the Necronomicon. Other tomes held at the library include the Unaussprechlichen Kulten by Friedrich von Junzt and the fragmentary Book of Eibon. Miskatonic has a medical school.",
 private_land: "Yes",
 in_use: "Yes",
-user_id: 1
+user_id: 1,
+longitude: 41.36,
+latitude: -72.71,
 )
 
 Location.create(
