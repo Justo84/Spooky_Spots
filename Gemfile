@@ -28,6 +28,7 @@ gem 'fog'
 gem 'devise'
 gem 'rails_12factor'
 gem 'kaminari'
+gem 'forem', :github => "radar/forem", :branch => "rails4"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
