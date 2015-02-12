@@ -42,9 +42,11 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     @location.user = current_user
+    binding.pry
     if @location.save
      redirect_to location_path(@location)
     else
+      flash[:notice] = "Failed to add new location"
       render "locations/new"
     end
   end

@@ -70,7 +70,6 @@ title {
 [class*='col-'] {
   float: left;
 }
-
 .col-2-3 {
   padding-top: 25px;
   padding-right: 50px;
@@ -79,8 +78,36 @@ title {
   width: 75%;
 }
 .col-1-3 {
-
   width: 25%;
+}
+
+[class*='map-'] {
+  float: left;
+}
+.map-1 {
+  width: 5%;
+}
+.map-2 {
+  width: 45%;
+  padding-left: 200px;
+}
+.map-3 {
+  width: 50%;
+  padding-left: 200px;
+}
+
+[class*="lat_long-"] {
+  float: left;
+}
+.lat_long-1 {
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.lat_long-2 {
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 body {
@@ -163,4 +190,11 @@ h6 {
   font-family: 'Josefin Slab';
   color: white;
   font-size: 110%;
+}
+
+.lat_long {
+  font-family: 'Josefin Slab';
+  color: white;
+  font-size: 110%;
+  padding-left: 20px;
 }
