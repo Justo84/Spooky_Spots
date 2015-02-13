@@ -47,4 +47,6 @@ group :development, :test do
   gem 'spring'
   gem 'quiet_assets'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
