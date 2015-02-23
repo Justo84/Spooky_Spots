@@ -4,7 +4,7 @@ class Location < ActiveRecord::Base
   has_many :location_images
 
   validates :name, presence: true
-  validates :description, presence: true, length: {minimum: 20}
+  validates :description, presence: true, length: {minimum: 10}
   validates :state, presence: true
   validates :town, presence: true
   validates :size, presence: true
@@ -16,5 +16,5 @@ class Location < ActiveRecord::Base
   end
 
   paginates_per 10
-  
+
 end

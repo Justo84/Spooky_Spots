@@ -46,7 +46,7 @@ class LocationsController < ApplicationController
       flash[:notice] = "Location created"
      redirect_to location_path(@location)
     else
-      flash[:notice] = "Failed to add new location"
+      flash[:notice] = "Please fill out form completely"
       render "locations/new"
     end
   end
