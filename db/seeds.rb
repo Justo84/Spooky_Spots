@@ -40,8 +40,8 @@ history: "Miskatonic University is famous for its collection of Cthulhu Mythos a
 private_land: "Yes",
 in_use: "Yes",
 user_id: 1,
-longitude: 41.36,
-latitude: -72.71,
+longitude: "41.36",
+latitude: "-72.71",
 )
 
 Location.create(
