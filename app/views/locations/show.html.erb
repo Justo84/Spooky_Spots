@@ -2,7 +2,9 @@
 <h6 align="right">Added by:&nbsp; <%= @location.user.username %> </h6>
 
 <% if @location.latitude && @location.longitude != "0" %>
-  <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@location.latitude + "," + @location.longitude%>&zoom=12&size=400x400&maptype=satellite"></img>
+  <img src="https://maps.googleapis.com/maps/api/staticmap?center='<%=@location.latitude + "," + @location.longitude%>&zoom=12&size=400x400&maptype=satellite"></img>
+  Latitude: <%= @location.latitude %>
+  Longitude: <%= @location.longitude %>
 <% else %>
 <% end %>
 
