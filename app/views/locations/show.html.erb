@@ -21,7 +21,7 @@
     <h5><%= @location.state %></h5>
     <h4>Town: </h4>
     <h5><%= @location.town %></h5>
-    <% if @location.street != "" %>
+    <% if @location.street != nil %>
       <h4>Street: </h4>
       <h5><%= @location.street %> </h5>
     <% end %>
