@@ -38,13 +38,15 @@
   <div>&nbsp;</div>
 
   <div class="lat_long-1">
-    <%= f.label "latitude, if known", class: "form_text" %>
-    <%= f.text_area :latitude %>
+    <%= f.label "latitude", class: "form_text" %>
+    <%= f.text_area :latitude, :placeholder => "0"  %>
+    <h6>Leave as 0 if unknown</h6>
   </div>
 
   <div class="lat_long-2">
-    <%= f.label "longitude, if known", class: "form_text" %>
-    <%= f.text_area :longitude %>
+    <%= f.label "longitude", class: "form_text" %>
+    <%= f.text_area :longitude, :placeholder => "0"  %>
+    <h6>Leave as 0 if unknown</h6>
   </div>
 
 </div>
