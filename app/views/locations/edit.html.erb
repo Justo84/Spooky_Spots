@@ -1,7 +1,7 @@
 <h1> Update <%= @location.name %> info</h1>
 
 <%= form_for @location do |f| %>
-<div class="row">
+  <div class="row">
   <div class="large-6 columns">
     <%= f.label :name, class: "form_text" %>
     <%= f.text_field :name, :placeholder => "Give a good spooky name to your discovered spot." %>
@@ -18,25 +18,37 @@
   <%= f.text_area :history, :placeholder => "Know any history about the spot?  If not leave blank." %>
 </div>
 
-<div class="row">
-  <div class="small-1 columns">
-    <%= f.label :state, class:"form_text" %>
-    <%= f.select :state, %w[AL MT AK NE AZ NV AR NH CA NJ CO NM CT NY DE NC FL ND GA OH HI OK ID OR IL PA IN RI IA SC KS SD KY TN LA TX ME UT MD VT MA VA MI WA MN WV MS WI MO WY]%>
-  </div>
-</div>
+<div class="grid">
 
-<div class="row">
-  <div class="small-3 columns">
+  <div class="map-1">
+      <%= f.label :state, class:"form_text" %>
+      <%= f.select :state, %w[AL MT AK NE AZ NV AR NH CA NJ CO NM CT NY DE NC FL ND GA OH HI OK ID OR IL PA IN RI IA SC KS SD KY TN LA TX ME UT MD VT MA VA MI WA MN WV MS WI MO WY]%>
+  </div>
+
+  <div class="map-2">
     <%= f.label :town, class:"form_text" %>
     <%= f.text_area :town %>
   </div>
-</div>
 
-<div class="row">
-  <div class="small-4 columns">
+  <div class="map-3">
     <%= f.label :street, class: "form_text" %>
     <%= f.text_area :street, :placeholder => "If applicable" %>
   </div>
+
+  <div>&nbsp;</div>
+
+  <div class="lat_long-1">
+    <%= f.label "latitude", class: "form_text" %>
+    <%= f.text_area :latitude, :placeholder => "0"  %>
+    <h6>Leave as 0 if unknown</h6>
+  </div>
+
+  <div class="lat_long-2">
+    <%= f.label "longitude", class: "form_text" %>
+    <%= f.text_area :longitude, :placeholder => "0"  %>
+    <h6>Leave as 0 if unknown</h6>
+  </div>
+
 </div>
 
 <div class="row">
@@ -55,8 +67,8 @@
 
 <div class="row">
   <div class="small-2 columns">
-    <%= f.label :in_use, class: "form_text" %>
-    <%= f.select(:in_use, ["Unknown", "Yes", "No"]) %>
+  <%= f.label :in_use, class: "form_text" %>
+  <%= f.select(:in_use, ["Unknown", "Yes", "No"]) %>
   </div>
 </div>
 <div>&nbsp;</div>
@@ -64,5 +76,8 @@
 <div>
   <%= f.submit "Update", class: "button alert expand" %>
 </div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 <% end %>

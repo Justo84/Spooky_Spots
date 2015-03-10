@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
 
   def update
     @location = Location.find(params[:id])
-    if @location.update_attributes(params[:location].permit(:name, :description, :state, :town, :street, :size, :history, :endorsed))
+    if @location.update_attributes(params[:location].permit(:name, :description, :state, :town, :latitude, :longitude, :street, :size, :history, :endorsed))
       redirect_to parent
     else
       @location = parent
