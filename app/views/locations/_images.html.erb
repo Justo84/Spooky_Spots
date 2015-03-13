@@ -1,0 +1,38 @@
+<ul class="small-block-grid-3">
+  <% @location.location_images.each do |location_image| %>
+  <li><%= image_tag(location_image.image.url, alt: location_image.description) %><%= location_image.description %>
+    <% if @user && (@user == location_image.user || @user.role == "admin") %><%= button_to "Delete image",
+    location_location_image_path(@location, location_image),
+    method: :delete,
+    action: :destroy,
+    class: "button alert tiny"%></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<% if @user %>
+  <div>&nbsp;</div>
+  <div>Upload a photo of <%= @location.name %></div>
+  <%= form_for [@location, @image] do |f| %>
+    <div>
+      <%= f.label :image, "Image Select", class:"image_select" %>
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <div class="small-4 columns">
+        <%= f.label :description, "Image Description", class:"form_text" %>
+        <%= f.text_field :description %>
+      </div>
+    </div>
+    <br>
+    <%= f.hidden_field :location_id, value: @location.id %>
+    <%= f.submit "Add photo", class: "button alert tiny" %>
+  <% end %>
+  </div>
+  <br>
+  <div>&nbsp;</div>
+<% else %>
+  <div>&nbsp;</div>
+  Sign in to add photos
+  <div>&nbsp;</div>
+<% end %>
