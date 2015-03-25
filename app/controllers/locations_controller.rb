@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
       redirect_to parent
     else
       @location = parent
+      flash[:notice] = "Please fill out form completely"
       @errors = @location.errors.full_messages
       render "locations/edit"
     end

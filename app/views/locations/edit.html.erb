@@ -4,6 +4,7 @@
   <br>
   <% @location.errors.full_messages.each do |error| %>
     <%= error %>
+    <br>
   <% end %>
   <br>
 <% end %>
@@ -23,7 +24,7 @@
 
 <div>
   <%= f.label :history, class:"form_text" %>
-  <%= f.text_area :history, :placeholder => "Know any history about the spot?  If not leave blank." %>
+  <%= f.text_area :history, :placeholder => "Know any history about the spot?  If not leave as Unknown." %>
 </div>
 
 <div class="grid">
