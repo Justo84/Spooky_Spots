@@ -36,7 +36,8 @@ class ReviewsController < ApplicationController
       redirect_to location_path(@location.id)
     else
       flash[:notice] = "Please fill out form completely"
-      render :new
+      @errors = @review.errors.full_messages
+      render "reviews/new"
     end
   end
 
