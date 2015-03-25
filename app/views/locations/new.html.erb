@@ -3,6 +3,15 @@
 
 <h1> Create a New Spot </h1>
 
+<% if @location.errors.any? %>
+  <br>
+  <% @location.errors.full_messages.each do |error| %>
+    <%= error %>
+  <% end %>
+  <br>
+<% end %>
+
+
 <%= form_for @location do |f| %>
   <div class="row">
   <div class="large-6 columns">

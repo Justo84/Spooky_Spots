@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
       redirect_to parent
     else
       @location = parent
+      @errors = @location.errors.full_messages
       render "locations/edit"
     end
   end
@@ -44,9 +45,10 @@ class LocationsController < ApplicationController
     @location.user = current_user
     if @location.save
       flash[:notice] = "Location created"
-     redirect_to location_path(@location)
+      redirect_to location_path(@location)
     else
       flash[:notice] = "Please fill out form completely"
+      @errors = @location.errors.full_messages
       render "locations/new"
     end
   end
