@@ -1,5 +1,15 @@
 <h1> Update your review for <%= @location.name %> </h1>
 
+<% if @review.errors.any? %>
+  <br>
+  <% @review.errors.full_messages.each do |error| %>
+    <%= error %>
+    <br>
+  <% end %>
+  <br>
+<% end %>
+
+
 <%= form_for [@location, @review] do |f| %>
 
 <div>
