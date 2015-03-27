@@ -5,7 +5,6 @@ class Review < ActiveRecord::Base
   validates :spo_rating, presence: true
   validates :sce_rating, presence: true
   validates :exp_rating, presence: true
-  # validates :description, presence: true, length: {minimum: 10}
   validates :description, length: {
     minimum: 10,
     maximum: 50,
