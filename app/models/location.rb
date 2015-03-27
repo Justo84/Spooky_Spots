@@ -4,7 +4,13 @@ class Location < ActiveRecord::Base
   has_many :location_images
 
   validates :name, presence: true
-  validates :description, presence: true, length: {minimum: 10}
+  validates :description, length: {
+    minimum: 30,
+    maximum: 400,
+    tokenizer: lambda { |str| str.split(/\s+/) },
+    too_short: "must have at least %{count} words",
+    too_long: "must have at most %{count} words"
+  }
   validates :state, presence: true
   validates :town, presence: true
   validates :size, presence: true
