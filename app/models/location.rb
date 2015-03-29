@@ -3,16 +3,16 @@ class Location < ActiveRecord::Base
   belongs_to :user
   has_many :location_images
 
-  validates :name, presence: true
-  validates :description, length: {
-    minimum: 30,
-    maximum: 400,
+  validates :name, presence: true, length: { maximum: 30 }
+  validates :description, presence: true, length: {
+    minimum: 20,
+    maximum: 300,
     tokenizer: lambda { |str| str.split(/\s+/) },
     too_short: "must have at least %{count} words",
     too_long: "must have at most %{count} words"
   }
   validates :state, presence: true
-  validates :town, presence: true
+  validates :town, presence: true, length: { maximum: 30 }
   validates :size, presence: true
   validates :history, presence: true
   validates :user_id, presence: true
