@@ -2,6 +2,12 @@
 <html>
 
 <h1><%= @location.name %></h1>
+
+<% if @location.endorsed == true %>
+  <h4> Endorsed By Spooky Spots </h4>
+<% end %>
+<div>&nbsp;</div>
+
 <h6 align="right">Added by:&nbsp; <%= @location.user.username %> </h6>
 
 <div class="grid">
@@ -54,12 +60,6 @@
 <% end %>
 
 <div>&nbsp;</div>
-
-<% if @location.endorsed == true %>
-  <h4> Endorsed By Spooky Spots </h4>
-<% end %>
-<div>&nbsp;</div>
-
 
 <% if @user && @user.role == "admin" %>
     <% if @location.endorsed == false %>
