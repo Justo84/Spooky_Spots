@@ -14,7 +14,11 @@ class Location < ActiveRecord::Base
   validates :state, presence: true
   validates :town, presence: true, length: { maximum: 30 }
   validates :size, presence: true
-  validates :history, presence: true
+  validates :history, presence: true, length: {
+    maximum: 300,
+    tokenizer: lambda { |str| str.split(/\s+/) },
+    too_long: "must have at most %{count} words"
+  }
   validates :user_id, presence: true
 
   def self.search(query)
