@@ -40,8 +40,8 @@ history: "Miskatonic University is famous for its collection of Cthulhu Mythos a
 private_land: "Yes",
 in_use: "Yes",
 user_id: 1,
-longitude: "41.36",
-latitude: "-72.71",
+longitude: "41.36W",
+latitude: "-72.71N",
 )
 
 Location.create(
@@ -54,7 +54,10 @@ size: "Huge",
 history: "In 1846 during a sacrificial ritual at the reef Captain Marsh and several members of the Esoteric Order of Dagon were arrested, though no formal charges were made.  It was destroyed during the government raid of 1928.",
 private_land: "No",
 in_use: "No",
-user_id: 2
+user_id: 2,
+longitude: "77.36W",
+latitude: "23.71N",
+
 )
 
 Location.create(
@@ -67,7 +70,10 @@ size: "Tiny",
 history: "In the isolated, desolate and decrepit village of Dunwich, Wilbur Whateley is the hideous son of Lavinia Whateley, a deformed and unstable albino mother, and an unknown father (alluded to in passing by mad Old Whateley, as 'Yog-Sothoth'), and strange events surround his birth and precocious development. ",
 private_land: "No",
 in_use: "No",
-user_id: 2
+user_id: 2,
+longitude: "91.36W",
+latitude: "22.71N",
+
 )
 
 Review.create(
