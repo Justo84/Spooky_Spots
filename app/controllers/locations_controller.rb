@@ -12,10 +12,11 @@ class LocationsController < ApplicationController
   def update
     @location = Location.find(params[:id])
     if @location.update_attributes(params[:location].permit(:name, :description, :state, :town, :latitude, :longitude, :street, :size, :history, :endorsed))
+      flash[:notice] = "Location updated"
       redirect_to parent
     else
       @location = parent
-      flash[:notice] = "Please fill out form completely"
+      flash[:notice] = "Please fill out form correctly"
       @errors = @location.errors.full_messages
       render "locations/edit"
     end
