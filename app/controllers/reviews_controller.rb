@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review edited"
       redirect_to parent
     else
+      flash[:notice] = "Review update failed"
       @location = parent
       @errors = @review.errors.full_messages
       render "reviews/edit"
