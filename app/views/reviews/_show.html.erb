@@ -4,6 +4,7 @@
   <h4> REVIEWS: </h4>
   <% @reviews.each do |review| %>
     <div><h5> <%= review.description %></h5></div>
+    <div><h6> by <%= review.user.username %></h6><div>
     <table>
       <tr>
         <th><u>Catagory</u></th>
