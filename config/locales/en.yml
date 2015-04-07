@@ -21,3 +21,20 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      review:
+        spo_rating: "Spookiness"
+        sce_rating: "Scenery"
+        exp_rating: "Exploration"
+
+    errors:
+      models:
+        review:
+          attributes:
+            spo_rating:
+              blank: "rating is required"
+            sce_rating:
+              blank: "rating is required"
+            exp_rating:
+              blank: "rating is required"
