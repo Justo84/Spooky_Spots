@@ -5,7 +5,7 @@ class Location < ActiveRecord::Base
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :description, presence: true, length: {
-    minimum: 20,
+    minimum: 10,
     maximum: 300,
     tokenizer: lambda { |str| str.split(/\s+/) },
     too_short: "must have at least %{count} words",
