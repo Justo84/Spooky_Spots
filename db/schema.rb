@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20150206211002) do
     t.string   "state",                            null: false
     t.string   "town",                             null: false
     t.string   "street"
-    t.string   "longitude",    default: "0"
-    t.string   "latitude",     default: "0"
+    t.string   "longitude",    default: ""
+    t.string   "latitude",     default: ""
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.string   "size",                             null: false
