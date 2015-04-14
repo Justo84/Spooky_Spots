@@ -10,6 +10,10 @@
   <% end %>
 </ul>
 
+<% @location.location_images.each do |location_image| %>
+<li><%= image_tag location_image.image.url(:thumb), alt: location_image.description %><%= location_image.description %>
+<% end %>
+
 <% if @user %>
   <div>&nbsp;</div>
   <div>Upload a photo of <%= @location.name %></div>
