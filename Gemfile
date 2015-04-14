@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "foundation-rails"
 gem 'carrierwave'
+gem 'rmagick'
 gem 'fog'
 gem 'devise'
 gem 'rails_12factor'
