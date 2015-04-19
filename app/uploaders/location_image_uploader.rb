@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class LocationImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::RMagick
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -53,5 +54,8 @@ class LocationImageUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
+  version :thumb do
+    process :resize_to_limit => [350, 350]
+  end
 
 end
