@@ -1,4 +1,4 @@
-class LocationImagesController < ApplicationController
+class LocationImagesController < ApplicationController  
   def create
     @image = LocationImage.new(location_image_params)
     @location = Location.find(params[:location_id])
