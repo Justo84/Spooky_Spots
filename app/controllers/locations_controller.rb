@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.search(params[:search])
-    @images = LocationImage.random(4)
+    @images = LocationImage.random(3)
   end
 
   def edit
