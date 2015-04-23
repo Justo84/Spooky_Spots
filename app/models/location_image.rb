@@ -6,4 +6,9 @@ class LocationImage < ActiveRecord::Base
 
   validates :image, presence: true
   validates :location_id, presence: true
+
+  def self.random(count)
+    order("RANDOM()").limit(count)
+  end
+
 end

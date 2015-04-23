@@ -12,7 +12,7 @@ class Admin::LocationsController < ApplicationController
       render "locations/show"
     end
   end
-
+  
   private
 
   def location_params
