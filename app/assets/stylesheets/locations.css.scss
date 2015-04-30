@@ -192,9 +192,7 @@ h6 {
   font-size: 110%;
 }
 
-.lat_long {
-  font-family: 'Josefin Slab';
-  color: white;
-  font-size: 110%;
-  padding-left: 20px;
-}
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
