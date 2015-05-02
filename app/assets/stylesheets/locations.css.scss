@@ -5,7 +5,7 @@ title {
 
 img {
   /* Webkit for Chrome and Safari */
-  -webkit-transform: scale(1, 1); // This is the scale for the normal size of the image.
+  -webkit-transform: scale(1, 1);
   -webkit-transition-duration: 500ms;
   -webkit-transition-timing-function: ease-out;
 
@@ -22,7 +22,7 @@ img {
 
 img:hover {
   /* Webkit for Chrome and Safari */
-  -webkit-transform: scale(1.5, 1.5); // This is the enlarged size scale of the image.
+  -webkit-transform: scale(1.5, 1.5);
   -webkit-transition-duration: 500ms;
   -webkit-transition-timing-function: ease-out;
 

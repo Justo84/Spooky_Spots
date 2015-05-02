@@ -7,7 +7,7 @@
 <br>
 
 <div>
-  <ul <ul class="small-block-grid-3">
+  <ul <ul class="small-block-grid-3", alter="">
     <% @images.each do |image| %>
         <li><%= link_to image_tag(image.image.url), location_path(image.location_id) %></li>
     <% end %>
