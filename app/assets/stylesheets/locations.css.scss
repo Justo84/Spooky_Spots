@@ -37,12 +37,6 @@ img:hover {
   -ms-transition-timing-function: ease-out;
 }
 
-/* Chrome, Safari, Opera */
-@-webkit-keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
-}
-
 [class*='col-'] {
   float: left;
   }
